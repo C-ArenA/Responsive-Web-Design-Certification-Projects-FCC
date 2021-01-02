@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey-Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="title">Metas de Año Nuevo</h1>
+        <p id="description">C-ArenA</p>    
+    </header>
+    <main>
+        <form action="" id="survey-form">
+            <div id="personalData">
+                <h2>Datos Personales:</h2>
+                <div class="form-group">
+                    <label for="name" id="name-label">Nombre:</label>
+                    <input type="text" name="name" id="name" placeholder="Juan Pérez" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" id="email-label">Correo:</label>
+                    <input type="email" name="email" id="email" placeholder="juanp@mail.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="number" id="number-label">Edad:</label>
+                    <input type="number" name="edad" id="number" min="5" max="130" placeholder="24">
+                </div>
+                <div class="form-group">
+                    <label for="dropdown">Sexo:</label>
+                    <select name="dropdown" id="dropdown">
+                        <option value="man">Hombre</option>
+                        <option value="woman">Mujer</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="otherQuestions">
+                <h2>Cómo fue tu año pasado:</h2>
+                <div class="form-group-radio">
+                    <div class="radio-group">
+                        <input type="radio" name="bebida_caliente" id="coffee" value="Café">
+                        <label for="coffee">Bellísimo como yo</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" name="bebida_caliente" id="sucumbe" value="Sucumbé">
+                        <label for="sucumbe">Hermoso como este sitio</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" name="bebida_caliente" id="radioSel" value="Sucumbé">
+                        <label for="radioSel">Catastróficamente horrible</label>
+                    </div>
+                </div>
+                <h2>Cuáles fueron tus meses favoritos?</h2>
+                <div class="form-group-radio">
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="importantMonths" id="checkEnero" value="Enero">
+                        <label for="checkEnero">Enero el Primero</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="importantMonths" id="checkFebruary" value="Febrero">
+                        <label for="checkFebruary">Febrero Carnavalero</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="importantMonths" id="checkMarch" value="Marzo">
+                        <label for="checkMarch">Marzo por Casa Descalzo</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="importantMonths" id="checkApril" value="Abril">
+                        <label for="checkApril">Abril nadie puede salir</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="importantMonths" id="checkMay" value="Mayo">
+                        <label for="checkMay">Mayo en remoto trabajo</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="importantMonths" id="checkJune" value="Junio">
+                        <label for="checkJune">Junio </label>
+                    </div>
+                </div>
+            </div>
+            <textarea name="suggestions" id="suggestionsText" cols="30" rows="10" placeholder="Tienes alguna sugerencia para mejorar este test? Qué preguntas añadirías? (Opcional)"></textarea>
+            <div class="form-group">
+            <input type="submit" value="Enviar" id="submit">
+            </div>
+        </form>
+    </main>
+
+    <footer>
+
+    </footer>
+    
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>    
+</body>
+</html>
