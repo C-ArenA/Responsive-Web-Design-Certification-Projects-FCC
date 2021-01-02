@@ -96,9 +96,7 @@ label {
     width: 30%;
     background-color: white;
     color: black;
-    text-align: left;
-    font-family: 'Princess Sofi', monospace;
-    font-size: 1.5rem;
+    
 }
 
 select, input[type = "text"], input[type = "number"], input[type = "email"] {
@@ -168,4 +166,28 @@ footer p {
     padding: 10px 5px 2px 5px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 10px;
+    }
+    form {
+        width: 90%;
+    }
+
+    label {
+        padding-left: 10px;
+        padding-top: 0.6rem;
+        display: inline-block;
+        height: 3rem;
+    
+        text-align: left;
+        font-family: 'Princess Sofi', monospace;
+        font-size: 1rem;
+    }
+    h1{
+        font-size: 7vw;
+    }
+
 }
