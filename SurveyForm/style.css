@@ -30,7 +30,7 @@ h1 {
     position: absolute;
     left: 30px;
 }
-h1:after{
+h1::after{
     content: "";
     position: absolute;
     /* width: 100px;
@@ -58,9 +58,12 @@ form::-webkit-scrollbar {
 }
 
 h2 {
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 10px;
+    font-weight: bold;
+
 }
+
 
 .form-group{
     height: 3rem;
@@ -125,4 +128,27 @@ input[type = "radio"], input[type = "checkbox"] {
     flex-direction: column;
     width: 70%;
     margin: auto;
+}
+
+textarea {
+    width: 70%;
+    margin-top: 30px;
+    background-color: rgba(247,247,247,0.8);
+    border-style: unset;
+    padding: 10px;
+}
+
+input[type="submit"] {
+    display: block;
+    padding: 15px 40px;
+    margin:auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+hr {
+    border-color: #f7f7f7;
+    width: 50%;
+    margin: auto;
+    background-color: #f7f7f7;
 }

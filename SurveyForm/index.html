@@ -8,13 +8,14 @@
 </head>
 <body>
     <header>
-        <h1 id="title">Metas de Año Nuevo</h1>
+        <h1 id="title">Notas de Año Nuevo</h1>
         <p id="description">C-ArenA</p>    
     </header>
     <main>
         <form action="" id="survey-form">
             <div id="personalData">
                 <h2>Datos Personales:</h2>
+                <hr>
                 <div class="form-group">
                     <label for="name" id="name-label">Nombre:</label>
                     <input type="text" name="name" id="name" placeholder="Juan Pérez" required>
@@ -37,7 +38,8 @@
             </div>
             
             <div id="otherQuestions">
-                <h2>Cómo fue tu año pasado:</h2>
+                <h2>Cómo fue tu 2020:</h2>
+                <hr>
                 <div class="form-group-radio">
                     <div class="radio-group">
                         <input type="radio" name="bebida_caliente" id="coffee" value="Café">
@@ -52,7 +54,8 @@
                         <label for="radioSel">Catastróficamente horrible</label>
                     </div>
                 </div>
-                <h2>Cuáles fueron tus meses favoritos?</h2>
+                <h2>Tus meses favoritos</h2>
+                <hr>
                 <div class="form-group-radio">
                     <div class="checkbox-group">
                         <input type="checkbox" name="importantMonths" id="checkEnero" value="Enero">
@@ -76,14 +79,40 @@
                     </div>
                     <div class="checkbox-group">
                         <input type="checkbox" name="importantMonths" id="checkJune" value="Junio">
-                        <label for="checkJune">Junio </label>
+                        <label for="checkJune">Junio las redes en sus puños</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="importantMonths" id="checkJuly" value="Julio">
+                        <label for="checkJuly">Julio quizá soy un tertulio</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="importantMonths" id="checkAugust" value="Agosto">
+                        <label for="checkAugust">Agosto la vacuna del trosko</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="importantMonths" id="checkSeptember" value="Septiembre">
+                        <label for="checkSeptember">Septiembre no durará por siempre</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="importantMonths" id="checkOctober" value="Octubre">
+                        <label for="checkOctober">Octubre el mal de costumbre</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="importantMonths" id="checkNovember" value="Noviembre">
+                        <label for="checkNovember">Noviembre no duró por siempre</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="importantMonths" id="checkDecember" value="Diciembre">
+                        <label for="checkDecember">Diciembre girten Jumanji y que el nuevo año entre</label>
                     </div>
                 </div>
             </div>
-            <textarea name="suggestions" id="suggestionsText" cols="30" rows="10" placeholder="Tienes alguna sugerencia para mejorar este test? Qué preguntas añadirías? (Opcional)"></textarea>
-            <div class="form-group">
+            <h2>Mándate un mensaje</h2>
+            <hr>
+            <textarea name="suggestions" id="suggestionsText" cols="30" rows="10" placeholder="Ejemplo: Trabaja más duro pedazo de holgazán"></textarea>
+            
             <input type="submit" value="Enviar" id="submit">
-            </div>
+            
         </form>
     </main>
 
