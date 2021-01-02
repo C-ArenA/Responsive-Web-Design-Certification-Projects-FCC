@@ -13,8 +13,7 @@
 body {
     background-image: url(img/backimg.jpg);
     background-attachment: fixed;
-    background-size: contain;
-    height: 100vh;
+    background-size: cover;
     color: #f7f7f7;
     position: relative;
     font-family: "Bahnschrift Light", 'Pragati Narrow', monospace;
@@ -44,7 +43,7 @@ h1::after{
 }
 
 form {
-    background-color: rgba(140, 15, 76, 0.7);
+    background-color: rgba(140, 15, 76, 0.3);
     width: 80%;
     margin: 180px auto 10px auto;
     text-align: center;
@@ -85,7 +84,6 @@ label {
     height: 3rem;
     
     text-align: left;
-    font-family: 'Princess Sofi', monospace;
     font-size: 1.5rem;
 }
 .form-group label {
