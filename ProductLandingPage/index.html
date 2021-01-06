@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product-Landing-Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header">
+        <div class="logo">
+            <a href="#home"><img src="img/header-img.png" alt="Logo de ArenA" id="header-img"></a>
+        </div>
+        <nav id="nav-bar">
+            <ul>
+                <li><a class="nav-link" href="#conoce">Conócenos</a></li>
+                <li><a class="nav-link" href="#productos">Productos</a></li>
+                <li><a class="nav-link" href="#contacta">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Ladrillos de Calidad</h2>
+            <form id="form" action="https://www.freecodecamp.com/email-submit">
+                <h3>Envíanos tu Consulta</h3>
+                <label for="email">Tu Correo:</label>
+                <input type="email" name="email" id="email" required placeholder="pepito@mail.com">
+                <label for="message">Tu Consulta:</label>
+                <textarea name="userMessage" id="message" cols="30" rows="10" placeholder="Ejemplo: Deseo 10 unidades de mil..."></textarea>
+                <input id="submit" type="submit" value="Enviar">
+            </form>
+        </section>
+        <section id="conoce">
+            <h2>Conócenos</h2>
+            <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/mwSh5xck2SA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+        <section id="productos">
+            <h2>Nuestros Productos</h2>
+            <div class="products-list">
+                <div class="producto">
+                    <img src="img/brick.png" alt="">
+                    <p>Ladrillo 6 huecos</p>
+                    <p>800Bs</p>
+                </div>
+                <div class="producto">
+                    <img src="img/minecraftBrick.png" alt="">
+                    <p>Ladrillo Minecraft</p>
+                    <p>900Bs</p>
+                </div>
+            </div>
+        </section>
+        <section id="contacta">
+            <h2>Contáctanos</h2>
+            <div class="datos">
+                <div class="whatsapp">
+                    <img src="img/whatsapp.png" alt="">
+                    <p>758-XX-XXX</p>
+                </div>
+                <div class="face">
+                    <img src="img/facebook-square.png" alt="">
+                    <p>arena-const</p>
+                </div>
+            </div>
+            <img src="img/map.png" alt="">
+        </section>
+    </main>
+    <footer>
+        <p>Designed by C-ArenA</p>
+        <legend>2021</legend>
+    </footer>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Armata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+*::selection {
+    color: var(--arena-black);
+}
+html {
+    scroll-behavior: smooth;
+    width: 100vw;
+}
+:root{
+    --arena-blue: #314451;
+    --arena-black: #11181C;
+    --arena-black-alpha: #11181CEE;
+    --arena-bricks: #F49800;
+    --arena-concrete: #F7F7F7;
+}
+body {
+    background-color: var(--arena-blue);
+    color: var(--arena-concrete);
+    font-family: 'Armata', sans-serif;
+    overflow-x: hidden;
+}
+
+main {
+    
+    margin-bottom: 140px;
+    width: 100vw;
+}
+header {
+    background-color: var(--arena-black-alpha);
+    position: fixed;
+    width: 100vw;
+    height: 100px;
+    top: 0px;
+}
+
+nav {
+    display: inline-block;
+    position: relative;
+    width: 80%;
+    top:-45px;
+    text-align: right;
+}
+ul {
+    list-style: none;
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+
+a {
+    color: var(--arena-bricks);
+    margin-right: 50px;
+    text-decoration: none;
+}
+a:hover {
+    color: #F7F7F7;
+}
+
+section {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 30vh;
+    height: 80vh;
+}
+section:first-child {
+    padding-top: 30vh;
+}
+form {
+    background-color: var(--arena-blue);
+    text-align: left;
+    padding: 20px;
+    width: 60%;
+    height: 30vh;
+    margin: auto;
+    /* box-shadow: -0px 4px 5px var(--arena-black); */
+}
+iframe {
+    border-radius: 20px;
+}
+input {
+    display: block;
+}
+label {
+    display: block;
+    width: 80%;
+    margin: auto;
+    font-size: 0.8rem;
+    margin-top: 8px;
+}
+
+footer {
+    margin-top: 20px;
+    background-color: var(--arena-black-alpha);
+}
+h2, a, #submit {
+    font-family: 'Russo One', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+}
+h2 {
+    font-size: 2.3rem;
+    margin: 20px;
+    margin-bottom: 40px;
+}
+footer {
+    text-align: right;
+    padding: 10px;
+    padding-right: 10%;
+}
+.products-list{
+    margin-top: 50px;
+}
+.producto {
+    width: 25%;
+    background-color: var(--arena-concrete);
+    color: var(--arena-black);
+    display: inline-block;
+    padding: 2% 0%;
+    margin: 10px 50px;
+    border-radius: 10px;
+    box-shadow: -5px 7px 5px ;
+}
+.producto img {
+    width: 40%;
+}
+.producto p{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.datos {
+    display: inline-block;
+}
+
+.face img, .whatsapp img {
+    width: 30%; 
+}
+.face p, .whatsapp p {
+    display: inline-block;
+}
+
+.logo {
+    width: 10%;
+    height: 100px;
+    padding: 5px;
+    margin:2px;
+    margin-top: 16px;
+    margin-left: 40px;
+    display: inline-block;
+}
+.logo img {
+    height: 60px;
+    display: block;
+    margin: auto;
+}
+#submit {
+    background-color: var(--arena-bricks);
+    padding:3px 25px;
+    color: var(--arena-concrete);
+    border-style: none;
+    border-radius: 7px;
+    margin: auto;
+    margin-top: 13px;
+    font-size: 1.2rem;
+}
+#submit:hover{
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+textarea {
+    width: 80%;
+    margin: auto;
+    display: block;
+    /* background-color: var(--arena-concrete); */
+    border-radius: 7px;
+    padding:7px;
+    height: 90px;
+}
+input[type="email"] {
+    width: 80%;
+    margin: auto;
+    display: block;
+    /* background-color: var(--arena-concrete); */
+    border-radius: 7px;
+    border-style: none;
+    padding:7px;
+}
+form h3 {
+    display: block;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    body {
+        
+    }
+    nav {
+        width: 50%
+    }
+    iframe{
+        width: 90%;
+        padding-bottom: 36.25%;
+    }
+    form {
+        width: 90%;
+    }
+    section {
+        margin-top: 20px;
+    }
+    a{
+        font-size: 0.7rem;
+        margin-right: 5vw;
+    }
+    nav {
+        width: 80%;
+    }
+    .logo {
+        margin-left: 20px;
+    }
+    section:first-child {
+        padding-top: 25vh;
+    }
+}
