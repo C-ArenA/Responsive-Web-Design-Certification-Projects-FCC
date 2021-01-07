@@ -73,8 +73,8 @@ nav {
     width: 20vw;
     height: 100vh;
     text-align: center;
-    direction: rtl;
-    
+    direction: rtl;  
+    background-color: var(--tech-black);
 }
 
 nav ul {
@@ -129,4 +129,35 @@ a:hover {
     html{
         font-size: 25px;
     }
+}
+
+@media(max-width:500px) {
+    nav {
+        width: 80%;
+        visibility: hidden;
+        background-color: var(--tech-black);
+        z-index: 1;
+    }
+    nav:hover {
+        visibility: visible;
+    }
+    ul {
+        width: 100%;
+    }
+    main {
+        margin-left: 0px;
+    }
+    h1{
+        font-size: 2rem;
+        visibility: visible;
+        background-color: var(--tech-black-alpha);
+        color: var(--tech-white);
+        padding: 7px 0px;
+        margin: 20px 0px;
+        text-decoration: none;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: -5px 3px 5px var(--tech-black) ;
+    }
+    
 }
