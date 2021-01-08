@@ -134,96 +134,89 @@ Posición:    7   6   5   4   3   2   1   0
             <header>
                 <h2>call</h2>
             </header>
-            <p>La instrucción add nos permite sumar el contenido de dos elementos (fuente y destino) que pueden ser:</p>
+            <p>La instrucción <strong>call</strong> hace el llamado de un procedimiento ubicado en la posición especificada por el único operando que recibe la instrucción. Este operando puede ser cualquiera de los siguientes:</p>
             <ul>
                 <li>Registro: reg</li>
-                <li>Memoria: mem</li>
-                <li>Acumulador: acc</li>
-                <li>Entrada inmediata: imm</li>
+                <li>Memoria de 16 bits: mem16</li>
+                <li>Memoria de 32 bits: mem32</li>
+                <li>Etiqueta de la posición del procedimiento a llamar: label</li>
             </ul>
-            <p>Y almacenar el resultado en el elemento designado como destino de acuerdo a la sintaxis:</p>
-            <code><span>add</span> destination,source</code>
-            <p>Sólo reg, mem y acc pueden ser destino para guardar el resultado, dado que una entrada inmediata no es ningún elemento de almacenamiento de la computadora</p>
-            <p>De acuerdo a esto todas las posibles operaciones son:</p>
+            <p>Lo primero que hace esta instrucción, antes de mandar la ejecución del programa a la posición del procedimiento en cuestión, es guardar en la pila la siguiente instrucción (Para poder regresar después de completar el procedimiento y no quedarse en el limbo de la computadora, obvio 😃). Sin embargo, es importante notar que lo que se pone en la pila puede variar dependiendo de dónde se encuentre el procedimiento. Si el procedimiento se encuentra fuera del segmento en el cual se está ejecutando el programa, se tendrá que guardar dos datos en la pila: El segmento y el offset de la siguiente instrucción. Si, por el contrario, el procedimiento se encuentra en el mismo segmento, sólo hará falta guardar el offset.</p>
+            <code><span>call</span> procedure</code>
+            <p>Todas las posibles operaciones son:</p>
             <ol>
-                <li><code><span>add</span> reg,reg</code></li>
-                <li><code><span>add</span> reg,mem</code></li>
-                <li><code><span>add</span> reg,imm</code></li>
-                <li><code><span>add</span> mem,reg</code></li>
-                <li><code><span>add</span> mem,imm</code></li>
-                <li><code><span>add</span> accum,imm</code></li>
+                <li><code><span>call</span> reg</code></li>
+                <li><code><span>call</span> mem16</code></li>
+                <li><code><span>call</span> mem32</code></li>
+                <li><code><span>call</span> label</code></li>
             </ol>
         </section>
         <section class="main-section" id="cmp">
             <header>
                 <h2>cmp</h2>
             </header>
-            <p>La instrucción add nos permite sumar el contenido de dos elementos (fuente y destino) que pueden ser:</p>
+            <p>La instrucción cmp realiza la comparación del operando de destino con el operando fuente realizando una resta entre ellos (destino - fuente):</p>
+            <code><span>cmp</span> destino,fuente</code>
+            <p>El resultado de esta operación puede verse en el registro de flags. Los elementos que pueden ir como operandos son los mismos que en una resta común:</p>
             <ul>
                 <li>Registro: reg</li>
                 <li>Memoria: mem</li>
                 <li>Acumulador: acc</li>
                 <li>Entrada inmediata: imm</li>
             </ul>
-            <p>Y almacenar el resultado en el elemento designado como destino de acuerdo a la sintaxis:</p>
-            <code><span>add</span> destination,source</code>
-            <p>Sólo reg, mem y acc pueden ser destino para guardar el resultado, dado que una entrada inmediata no es ningún elemento de almacenamiento de la computadora</p>
-            <p>De acuerdo a esto todas las posibles operaciones son:</p>
+            <p>Esta operación no almacena el resultado de la resta realizada en ningún registro, sólo almacena las banderas en el registro de flags:</p>
+            <p>Todas las posibles operaciones son:</p>
             <ol>
-                <li><code><span>add</span> reg,reg</code></li>
-                <li><code><span>add</span> reg,mem</code></li>
-                <li><code><span>add</span> reg,imm</code></li>
-                <li><code><span>add</span> mem,reg</code></li>
-                <li><code><span>add</span> mem,imm</code></li>
-                <li><code><span>add</span> accum,imm</code></li>
+                <li><code><span>cmp</span> reg,reg</code></li>
+                <li><code><span>cmp</span> reg,mem</code></li>
+                <li><code><span>cmp</span> reg,imm</code></li>
+                <li><code><span>cmp</span> mem,reg</code></li>
+                <li><code><span>cmp</span> mem,imm</code></li>
+                <li><code><span>cmp</span> accum,imm</code></li>
             </ol>
         </section>
         <section class="main-section" id="inc">
             <header>
                 <h2>inc</h2>
             </header>
-            <p>La instrucción add nos permite sumar el contenido de dos elementos (fuente y destino) que pueden ser:</p>
+            <p>La instrucción <strong>inc</strong> es bastante simple, simplemente incrementa en uno el valor almacenado en el operando especificado. Además de simple es bastante útil. Es como el ++ en el lenguaje C. Sus operandos pueden ser sólo de dos tipos:</p>
             <ul>
                 <li>Registro: reg</li>
                 <li>Memoria: mem</li>
-                <li>Acumulador: acc</li>
-                <li>Entrada inmediata: imm</li>
             </ul>
-            <p>Y almacenar el resultado en el elemento designado como destino de acuerdo a la sintaxis:</p>
-            <code><span>add</span> destination,source</code>
-            <p>Sólo reg, mem y acc pueden ser destino para guardar el resultado, dado que una entrada inmediata no es ningún elemento de almacenamiento de la computadora</p>
+            <p>El resultado del incremento se almacena, naturalmente, en el mismo elemento especificado en el operando.</p>
+            <code><span>inc</span> operand</code>
             <p>De acuerdo a esto todas las posibles operaciones son:</p>
             <ol>
-                <li><code><span>add</span> reg,reg</code></li>
-                <li><code><span>add</span> reg,mem</code></li>
-                <li><code><span>add</span> reg,imm</code></li>
-                <li><code><span>add</span> mem,reg</code></li>
-                <li><code><span>add</span> mem,imm</code></li>
-                <li><code><span>add</span> accum,imm</code></li>
+                <li><code><span>inc</span> reg</code></li>
+                <li><code><span>inc</span> mem</code></li>
             </ol>
         </section>
         <section class="main-section" id="mov">
             <header>
                 <h2>mov</h2>
             </header>
-            <p>La instrucción add nos permite sumar el contenido de dos elementos (fuente y destino) que pueden ser:</p>
+            <p>La instrucción <strong>mov</strong> es sin duda la más útil del lenguaje ensmblador. Existen algunas arquitecturas experimentales en las cuales se puede conseguir ejecutar cualquier tipo de programa usando simplemente instrucciones mov. Incluso en nuestra arquitectura es casi imposible hacer algo útil sin utilizar esta instrucción (o alguna de sus variantes), así que conviene conocerla:</p>
+            <code><span>mov</span> destination,source</code>
+            <p>Esta instrucción también es una de las más simples de entender y de las más educativas. Lo único que hace es <em>mover</em> los datos del operando fuente al operando destino (En realidad hace una copia, ya que el contenido del operando fuente no se toca. Tampoco se toca niguna bandera). Al ser una operación tan elemental puede recibir varios tipos de operandos:</p>
             <ul>
-                <li>Registro: reg</li>
-                <li>Memoria: mem</li>
-                <li>Acumulador: acc</li>
+                <li>Registro: reg / reg16</li>
+                <li>Registro de segmento: segreg</li>
+                <li>Memoria: mem / mem16</li>
                 <li>Entrada inmediata: imm</li>
             </ul>
-            <p>Y almacenar el resultado en el elemento designado como destino de acuerdo a la sintaxis:</p>
-            <code><span>add</span> destination,source</code>
-            <p>Sólo reg, mem y acc pueden ser destino para guardar el resultado, dado que una entrada inmediata no es ningún elemento de almacenamiento de la computadora</p>
+            <p>Sólo reg, mem y segreg pueden ser destino para guardar el resultado, dado que una entrada inmediata no es ningún elemento de almacenamiento de la computadora</p>
             <p>De acuerdo a esto todas las posibles operaciones son:</p>
             <ol>
-                <li><code><span>add</span> reg,reg</code></li>
-                <li><code><span>add</span> reg,mem</code></li>
-                <li><code><span>add</span> reg,imm</code></li>
-                <li><code><span>add</span> mem,reg</code></li>
-                <li><code><span>add</span> mem,imm</code></li>
-                <li><code><span>add</span> accum,imm</code></li>
+                <li><code><span>mov</span> reg,reg</code></li>
+                <li><code><span>mov</span> reg,mem</code></li>
+                <li><code><span>mov</span> reg,imm</code></li>
+                <li><code><span>mov</span> reg16,segreg</code></li>
+                <li><code><span>mov</span> mem,reg</code></li>
+                <li><code><span>mov</span> mem,imm</code></li>
+                <li><code><span>mov</span> mem16,segreg</code></li>
+                <li><code><span>mov</span> segreg,reg16</code></li>
+                <li><code><span>mov</span> segreg,mem16</code></li>
             </ol>
         </section>
     </main>
