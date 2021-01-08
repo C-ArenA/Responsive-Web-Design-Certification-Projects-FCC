@@ -29,90 +29,206 @@
             <header>
                 <h2>introduction</h2>
             </header>
-            <p>El lenguaje ensamblador es sin duda uno de los más complicados de entender y a la vez uno de los más potentes y educativos. Es por esto que hago esta guía básica para ayudarte a entenderlo de forma rápida y divertida</p>
+            <p>El lenguaje ensamblador es sin duda uno de los más complicados de utilizar y a la vez uno de los más potentes y educativos. Es por esto que hago esta guía básica para ayudarte a utilizarlo de forma rápida y sencilla.</p>
+            <p>En esta guía pondré de forma alfabética varios conceptos e instrucciones de ensamblador masm x86.</p>
+            <p>Espero que te sea útil y si tienes algún comentario, crítica constructiva o inquietud puedes contactarme mediante el enlace en la parte inferior derecha</p>
         </section>
         <section class="main-section" id="bits_and_bytes">
             <header>
                 <h2>bits and bytes</h2>
             </header>
-            <p>El lenguaje ensamblador es sin duda uno de los más complicados de entender y a la vez uno de los más potentes y educativos. Es por esto que hago esta guía básica para ayudarte a entenderlo de forma rápida y divertida</p>
+            <p>En una computadora 💻 todo se reduce a la manipulación de bits, a los cuales se acostumbra agrupar en bytes.
+                Con el lenguaje ensamblador estamos tan cerca del hardware que lo normal es tener la necesidad de utilizarlos. Para ello es importante primero entenderlos:
+            </p>
             <ul>
-                <li></li>
-                <li></li>
+                <li><strong>bit:</strong> Unidad básica de información digital. Puede tener uno de dos valores: <strong>1</strong> o <strong>0</strong></li>
+                <li><strong>byte:</strong> Conjunto de bits. ¿Cuántos? <strong>8!!</strong> (Aunque te digan lo contrario 😀)</li>
             </ul>
-            <p>El lenguaje ensamblador es sin duda uno de los más complicados de entender y a la vez uno de los más potentes y educativos. Es por esto que hago esta guía básica para ayudarte a entenderlo de forma rápida y divertida</p>
-            <code></code>
+            <p>El bit es el pedacito de información que las computadoras manejan todo el tiempo, pero al ser tan pequeño se hizo necesario hablar de bytes</p>
+            <code>
+                1 byte = 8 bits
+            </code>
+            <p>Un ejemplo de un byte sería el siguiente:</p>
+            <code>
+                10110101
+            </code>
+            <p>Es importante saber que el anterior arreglo también representa un número, dado que cada uno de los bits tiene un peso de acuerdo a su posición.</p>
+            <code>
+                10110101 = 1 * 128 + 0 * 64 + 1 * 32 + 1 * 16 + 0 * 8 + 1 * 4 + 0 * 2 + 1 * 1 <br>
+                10110101 = 128 + 32 + 16 + 4 + 1 <br>
+                10110101 = 181  
+            </code>
+            <p>La posición de más a la derecha <em>- bit menos significativo o "Least Significant Bit" (LSB) -</em> tiene un peso de 1 <em>(2^0). </em>
+            El siguiente bit tiene un peso de 2 <em>(2^1)</em> y así, sucesivamente,
+            cada bit tendrá un peso de acuerdo a la potencia de 2 que le corresponda
+            hasta llegar al bit de más a la izquierda <em>- bit más signficativo o "Most Significant Bit" (MSB) -</em>
+            el cual tiene un peso de 128 <em>(2^7)</em>. Esto se resume en el siguiente esquema:</p>
+            
+<pre><code>         MSB ⬇                       LSB ⬇
+             |   |   |   |   |   |   |   |
+    Byte:    1   0   1   1   0   1   0   1
+             |   |   |   |   |   |   |   |
+Posición:    7   6   5   4   3   2   1   0
+             |   |   |   |   |   |   |   |
+    Peso:   128  64  32  16  8   4   2   1
+</code></pre>
         </section>
         <section class="main-section" id="add">
             <header>
                 <h2>add</h2>
             </header>
-            <p>El lenguaje ensamblador es sin duda uno de los más complicados de entender y a la vez uno de los más potentes y educativos. Es por esto que hago esta guía básica para ayudarte a entenderlo de forma rápida y divertida</p>
-            <code></code>
-            <p>El lenguaje ensamblador es sin duda uno de los más complicados de entender y a la vez uno de los más potentes y educativos. Es por esto que hago esta guía básica para ayudarte a entenderlo de forma rápida y divertida</p>
-            <p>El lenguaje ensamblador es sin duda uno de los más complicados de entender y a la vez uno de los más potentes y educativos. Es por esto que hago esta guía básica para ayudarte a entenderlo de forma rápida y divertida</p>
+            <p>La instrucción add nos permite sumar el contenido de dos elementos (fuente y destino) que pueden ser:</p>
+            <ul>
+                <li>Registro: reg</li>
+                <li>Memoria: mem</li>
+                <li>Acumulador: acc</li>
+                <li>Entrada inmediata: imm</li>
+            </ul>
+            <p>Y almacenar el resultado en el elemento designado como destino de acuerdo a la sintaxis:</p>
+            <code><span>add</span> destination,source</code>
+            <p>Sólo reg, mem y acc pueden ser destino para guardar el resultado, dado que una entrada inmediata no es ningún elemento de almacenamiento de la computadora</p>
+            <p>De acuerdo a esto todas las posibles operaciones son:</p>
+            <ol>
+                <li><code><span>add</span> reg,reg</code></li>
+                <li><code><span>add</span> reg,mem</code></li>
+                <li><code><span>add</span> reg,imm</code></li>
+                <li><code><span>add</span> mem,reg</code></li>
+                <li><code><span>add</span> mem,imm</code></li>
+                <li><code><span>add</span> accum,imm</code></li>
+            </ol>
         </section>
         <section class="main-section" id="and">
             <header>
                 <h2>and</h2>
             </header>
-            <p>El lenguaje ensamblador es sin duda uno de los más complicados de entender y a la vez uno de los más potentes y educativos. Es por esto que hago esta guía básica para ayudarte a entenderlo de forma rápida y divertida</p>
-            <code></code>
-            <p>El lenguaje ensamblador es sin duda uno de los más complicados de entender y a la vez uno de los más potentes y educativos. Es por esto que hago esta guía básica para ayudarte a entenderlo de forma rápida y divertida</p>
-            <code></code>
-            <p>El lenguaje ensamblador es sin duda uno de los más complicados de entender y a la vez uno de los más potentes y educativos. Es por esto que hago esta guía básica para ayudarte a entenderlo de forma rápida y divertida</p>
+            <p>La instrucción and realiza la operación lógica AND (Obvio 😊) entre cada par de bits tomados de la misma posición en cada operando, fuente y destino. Entre estos operandos puede estaar cualquiera de los siguientes elementos:</p>
+            <ul>
+                <li>Registro: reg</li>
+                <li>Memoria: mem</li>
+                <li>Acumulador: acc</li>
+                <li>Entrada inmediata: imm</li>
+            </ul>
+            <p>El resultado de la instrucción se almacena en el operando en la posición de destino. La sintaxis general sería:</p>
+            <code><span>and</span> destination,source</code>
+            <p>Sólo reg, mem y acc pueden ser destino para guardar el resultado, dado que una entrada inmediata no es ningún elemento de almacenamiento de la computadora</p>
+            <p>De acuerdo a esto todas las posibles operaciones son:</p>
+            <ol>
+                <li><code><span>and</span> reg,reg</code></li>
+                <li><code><span>and</span> reg,mem</code></li>
+                <li><code><span>and</span> reg,imm</code></li>
+                <li><code><span>and</span> mem,reg</code></li>
+                <li><code><span>and</span> mem,imm</code></li>
+                <li><code><span>and</span> accum,imm</code></li>
+            </ol>
+            <p>La operación AND entre dos bytes (Nótese que los registros tienen más de 1 byte. Éste es sólo un ejemplo) sería así:</p>
+            <code>
+                11010011 AND 10001011: <br>
+                <br> 
+                11010011 <br>
+                10001011 <br>
+                -------- <br>
+                10000011
+            </code>
         </section>
         <section class="main-section" id="call">
             <header>
                 <h2>call</h2>
             </header>
-            <p>El lenguaje ensamblador es sin duda uno de los más complicados de entender y a la vez uno de los más potentes y educativos. Es por esto que hago esta guía básica para ayudarte a entenderlo de forma rápida y divertida</p>
-            <code></code>
+            <p>La instrucción add nos permite sumar el contenido de dos elementos (fuente y destino) que pueden ser:</p>
             <ul>
-                <li>a</li>
-                <li>b</li>
-                <li>c</li>
+                <li>Registro: reg</li>
+                <li>Memoria: mem</li>
+                <li>Acumulador: acc</li>
+                <li>Entrada inmediata: imm</li>
             </ul>
+            <p>Y almacenar el resultado en el elemento designado como destino de acuerdo a la sintaxis:</p>
+            <code><span>add</span> destination,source</code>
+            <p>Sólo reg, mem y acc pueden ser destino para guardar el resultado, dado que una entrada inmediata no es ningún elemento de almacenamiento de la computadora</p>
+            <p>De acuerdo a esto todas las posibles operaciones son:</p>
+            <ol>
+                <li><code><span>add</span> reg,reg</code></li>
+                <li><code><span>add</span> reg,mem</code></li>
+                <li><code><span>add</span> reg,imm</code></li>
+                <li><code><span>add</span> mem,reg</code></li>
+                <li><code><span>add</span> mem,imm</code></li>
+                <li><code><span>add</span> accum,imm</code></li>
+            </ol>
         </section>
         <section class="main-section" id="cmp">
             <header>
                 <h2>cmp</h2>
             </header>
-            <p>El lenguaje ensamblador es sin duda uno de los más complicados de entender y a la vez uno de los más potentes y educativos. Es por esto que hago esta guía básica para ayudarte a entenderlo de forma rápida y divertida</p>
-            <code></code>
+            <p>La instrucción add nos permite sumar el contenido de dos elementos (fuente y destino) que pueden ser:</p>
             <ul>
-                <li>a</li>
-                <li>b</li>
-                <li>c</li>
+                <li>Registro: reg</li>
+                <li>Memoria: mem</li>
+                <li>Acumulador: acc</li>
+                <li>Entrada inmediata: imm</li>
             </ul>
+            <p>Y almacenar el resultado en el elemento designado como destino de acuerdo a la sintaxis:</p>
+            <code><span>add</span> destination,source</code>
+            <p>Sólo reg, mem y acc pueden ser destino para guardar el resultado, dado que una entrada inmediata no es ningún elemento de almacenamiento de la computadora</p>
+            <p>De acuerdo a esto todas las posibles operaciones son:</p>
+            <ol>
+                <li><code><span>add</span> reg,reg</code></li>
+                <li><code><span>add</span> reg,mem</code></li>
+                <li><code><span>add</span> reg,imm</code></li>
+                <li><code><span>add</span> mem,reg</code></li>
+                <li><code><span>add</span> mem,imm</code></li>
+                <li><code><span>add</span> accum,imm</code></li>
+            </ol>
         </section>
         <section class="main-section" id="inc">
             <header>
                 <h2>inc</h2>
             </header>
-            <p>El lenguaje ensamblador es sin duda uno de los más complicados de entender y a la vez uno de los más potentes y educativos. Es por esto que hago esta guía básica para ayudarte a entenderlo de forma rápida y divertida</p>
-            <code></code>
+            <p>La instrucción add nos permite sumar el contenido de dos elementos (fuente y destino) que pueden ser:</p>
             <ul>
-                <li>a</li>
-                <li>b</li>
-                <li>c</li>
+                <li>Registro: reg</li>
+                <li>Memoria: mem</li>
+                <li>Acumulador: acc</li>
+                <li>Entrada inmediata: imm</li>
             </ul>
+            <p>Y almacenar el resultado en el elemento designado como destino de acuerdo a la sintaxis:</p>
+            <code><span>add</span> destination,source</code>
+            <p>Sólo reg, mem y acc pueden ser destino para guardar el resultado, dado que una entrada inmediata no es ningún elemento de almacenamiento de la computadora</p>
+            <p>De acuerdo a esto todas las posibles operaciones son:</p>
+            <ol>
+                <li><code><span>add</span> reg,reg</code></li>
+                <li><code><span>add</span> reg,mem</code></li>
+                <li><code><span>add</span> reg,imm</code></li>
+                <li><code><span>add</span> mem,reg</code></li>
+                <li><code><span>add</span> mem,imm</code></li>
+                <li><code><span>add</span> accum,imm</code></li>
+            </ol>
         </section>
         <section class="main-section" id="mov">
             <header>
                 <h2>mov</h2>
             </header>
-            <p>El lenguaje ensamblador es sin duda uno de los más complicados de entender y a la vez uno de los más potentes y educativos. Es por esto que hago esta guía básica para ayudarte a entenderlo de forma rápida y divertida</p>
-            <code></code>
+            <p>La instrucción add nos permite sumar el contenido de dos elementos (fuente y destino) que pueden ser:</p>
             <ul>
-                <li>a</li>
-                <li>b</li>
-                <li>c</li>
+                <li>Registro: reg</li>
+                <li>Memoria: mem</li>
+                <li>Acumulador: acc</li>
+                <li>Entrada inmediata: imm</li>
             </ul>
+            <p>Y almacenar el resultado en el elemento designado como destino de acuerdo a la sintaxis:</p>
+            <code><span>add</span> destination,source</code>
+            <p>Sólo reg, mem y acc pueden ser destino para guardar el resultado, dado que una entrada inmediata no es ningún elemento de almacenamiento de la computadora</p>
+            <p>De acuerdo a esto todas las posibles operaciones son:</p>
+            <ol>
+                <li><code><span>add</span> reg,reg</code></li>
+                <li><code><span>add</span> reg,mem</code></li>
+                <li><code><span>add</span> reg,imm</code></li>
+                <li><code><span>add</span> mem,reg</code></li>
+                <li><code><span>add</span> mem,imm</code></li>
+                <li><code><span>add</span> accum,imm</code></li>
+            </ol>
         </section>
     </main>
     <footer>
-        <p>by C-ArenA 💜💙💚🧡🤎🤍</p>
+        <p>by <a href="https://www.github.com/C-ArenA" target="blank">C-ArenA</a> 💜💙💚🧡🤎🤍</p>
     </footer>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
