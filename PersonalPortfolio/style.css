@@ -1,0 +1,390 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+/* For Debugging Purposes */
+/* *:hover {
+    outline: 1px dotted var(--me-white);
+}
+* {
+    outline: 1px dotted var(--me-star);
+    outline-offset: -2px;
+} */
+/* Globals */
+:root {
+    /* Colors */
+    --me-black: #072026;
+    --me-black-alpha: #072026cc;
+    --me-black-alpha2: #072026bb;
+    --me-star: #1ba698;
+    --me-white: #f7f7f7;
+    /* Fonts */
+    --me-font-main: "Staatliches", cursive;
+    --me-font-old: "Tangerine", cursive;
+    --me-font-boring: "Roboto Mono", monospace;
+    /* Sizes */
+    --nav-height: 50px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+*::selection {
+    background-color: var(--me-black-alpha);
+}
+
+body {
+    font-family: var(--me-font-boring);
+    font-size: 16px;
+    color: var(--me-black);
+    background-color: var(--me-white);
+}
+section {
+    height: 100vh;
+    padding-top: 60px;
+}
+h1 {
+    font-size: 8rem;
+    color: white;
+    font-family: var(--me-font-main);
+    font-weight: normal;
+}
+h3 {
+    font-family: var(--me-font-old);
+    color: white;
+    font-size: 4rem;
+    letter-spacing: 0.4rem;
+}
+h2 {
+    color: var(--me-star);
+    font-family: var(--me-font-main);
+    font-weight: normal;
+    font-size: 4rem;
+}
+/* Specific for nav */
+nav {
+    position: fixed;
+    display: block;
+    height: var(--nav-height);
+    width: 100%;
+    text-align: right;
+    background-color: var(--me-black-alpha2);
+    z-index: 4;
+}
+nav ul {
+    list-style: none;
+    display: inline-flex;
+    width: 60%;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding-right: 20px;
+}
+nav li {
+    font-family: var(--me-font-main);
+    font-weight: regular;
+    font-size: 1.1rem;
+    letter-spacing: 0.35rem;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+}
+nav a:hover {
+    font-size: 1.2rem;
+    color: var(--me-star);
+}
+/* Specific for Welcome Section */
+#welcome-section {
+    background-color: var(--me-black-alpha);
+    background-image: url(https://i.ibb.co/bz973Cr/mecold.jpg);
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 180vw;
+    background-position: right top;
+    padding-left: 40%;
+}
+.title {
+    width: 45%;
+    margin: 20px 0 0 0;
+}
+
+.my-skill {
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+}
+.my-skill::before {
+    content: "";
+    background-color: var(--me-black);
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 100vw;
+    z-index: -1;
+}
+.me {
+    width: 40%;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0px;
+    height: calc(100vh - var(--nav-height));
+    padding: 10px 0px 0px 0px;
+    overflow: hidden;
+    z-index: 3;
+}
+.me img {
+    height: 100%;
+    max-width: 100%;
+}
+/* About Me Section */
+#about-me {
+    height: 100vh;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 20vh;
+    overflow: hidden;
+}
+#about-me img {
+    width: 24%;
+    vertical-align: middle;
+    float: left;
+    margin: 10px;
+}
+#about-me p {
+    font-size: 1.5rem;
+}
+/* Projects Section */
+#projects {
+    background-color: var(--me-black);
+    padding-left: 20%;
+    padding-right: 20%;
+}
+#projects h2 {
+    color: var(--me-white);
+    width: 60%;
+}
+.projects-flex {
+    display: flex;
+    height: 60%;
+    margin: 30px 0px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: space-around;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.project-tile {
+    flex-basis: 30%;
+    margin: 10px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    height: 100%;
+    width: 30%;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    box-shadow: -4px 4px 4px black, 2px -2px 4px var(--me-black);
+}
+.project-tile img {
+    position: absolute;
+    height: 140%;
+    left: -10px;
+    bottom: 0px;
+}
+.project-tile p {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    background-color: var(--me-black);
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 10px;
+    font-family: var(--me-font-main);
+    height: fit-content;
+    width: 100%;
+    bottom: 0px;
+}
+.project-tile:hover {
+    color: var(--me-star);
+}
+.project-tile:hover img {
+    height: 115%;
+}
+
+/* Contact me section */
+#contact-me {
+    padding-top: 20vh;
+}
+#contact-me h1 {
+    color: var(--me-black);
+    letter-spacing: 0.7rem;
+    font-size: 6rem;
+    text-align: center;
+}
+#contact-me p {
+    font-family: var(--me-font-old);
+    font-size: 3rem;
+    text-align: center;
+}
+.contacts {
+    display: flex;
+    width: 65%;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 4vh;
+}
+.contacts a {
+    color: var(--me-black);
+    font-size: 1.6rem;
+    margin-top: 20px;
+}
+i {
+    margin: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--me-black);
+    color: var(--me-white);
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 1200px) {
+    .me {
+        padding-top: 25vh;
+    }
+}
+@media (max-width: 800px) {
+    html {
+        font-size: 14px;
+    }
+    .me {
+        padding-top: 41vh;
+        z-index: 0;
+        width: 100%;
+    }
+    .title {
+        margin-top: 5vh;
+    }
+    .my-skill {
+        margin-top: 20vh;
+    }
+    nav {
+        text-align: center;
+    }
+    nav ul {
+        width: 100%;
+        padding-right: unset;
+        justify-content: space-evenly;
+    }
+    #welcome-section {
+        padding-left: 8%;
+        background-size: 300vw;
+        background-position: right bottom;
+    }
+}
+@media (max-width: 600px) {
+    html {
+        font-size: 11px;
+    }
+    .me {
+        padding-top: 50vh;
+        z-index: 0;
+        width: 100%;
+    }
+    .title {
+        margin-top: 10vh;
+    }
+    .my-skill {
+        margin-top: 25vh;
+    }
+}
+@media (max-width: 450px) {
+    #welcome-section {
+        background-size: 500vw;
+    }
+    #contact-me h1 {
+        font-size: 4rem;
+    }
+    #contact-me p {
+        font-size: 2rem;
+    }
+    .contacts {
+        flex-flow: column;
+        align-items: center;
+    }
+    .contacts a {
+        margin: 2px 0px;
+        text-align: center;
+    }
+    .contacts i {
+        margin: unset;
+        display: block;
+    }
+}
+@media (max-width: 330px) {
+    html {
+        font-size: 7px;
+    }
+}
+@media (max-height: 600px) {
+    html {
+        font-size: 14px;
+    }
+    .title {
+        margin-top: 5vh;
+    }
+    .my-skill {
+        margin-top: 5vh;
+    }
+    .title {
+        width: 100%;
+    }
+}
+@media (max-height: 440px) {
+    html {
+        font-size: 8px;
+    }
+    .my-skill {
+        margin-top: 20vh;
+    }
+}
+@media (max-height: 600px) and (orientation: landscape) {
+    #welcome-section {
+        padding-left: 20%;
+    }
+}
+
+@media (orientation: portrait) {
+    .project-tile {
+        flex-basis: 40vh;
+        width: 60%;
+    }
+    .project-tile p {
+        height: fit-content;
+    }
+    .projects-flex {
+        flex-direction: column;
+        align-items: center;
+        height: max-content;
+    }
+    #projects {
+        height: max-content;
+        padding-bottom: 20px;
+    }
+}
